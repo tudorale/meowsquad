@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Slider from "react-slick";
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import useScrollPosition from "../components/useScrollPosition";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 import 'chart.piecelabel.js';
@@ -39,28 +40,39 @@ export const data = {
 
 export default function Home() {
 
+  const scrollPosition = useScrollPosition();
+
+
   useEffect(() => {
     if(window.innerWidth >= 870){
-      window.onscroll = function(){
+
+      if(scrollPosition >= 100){
+        let wrapper = document.querySelector(".roadmap");
+        wrapper.style.display = "flex";
+        wrapper.style.opacity = "1";
+
+
         AOS.init({
-          offset: 150,
-          delay: 0, 
+          offset: 140,
           duration: 700,
-          once: false,
         });
+
+      }else{
+        let wrapper = document.querySelector(".roadmap");
+        wrapper.style.opacity = "0";
       }
+
     }else{
       AOS.init({
-        offset: 110,
-        delay: 0, 
+        offset: 140,
         duration: 500,
-        once: true,
       });
     }
-  })
+
+  }, [scrollPosition])
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 700,
     slidesToShow: 4,
@@ -68,7 +80,7 @@ export default function Home() {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 1500,
-    draggable: false,
+    draggable: true,
     responsive: [
       {
         breakpoint: 1060,
@@ -109,14 +121,14 @@ export default function Home() {
       </Head>
       <div className={styles.background}>
    
-        <div className={styles.roadmap}>
+        <div className={styles.roadmap + " " + "roadmap"}>
           
-          <div className={styles.first}>
-            <div className={styles.fL} data-aos="fade-down">
+          <div className={styles.first + " " + "first"}>
+            <div className={styles.fL} data-aos="fade-down" data-aos-once="false">
               <img src="/paw.png" className={styles.firstPaw + " " + styles.paw}/>
               <div className={styles.firstLine}></div>
             </div>
-            <div className={styles.firstTexts} data-aos="fade-left" data-aos-delay="100">
+            <div className={styles.firstTexts} data-aos="fade-left" data-aos-once="false" data-aos-delay="100">
               <p className={styles.roadmapHeader}>June - September 2022</p>
               <div className={styles.roadmapText}>
                 <div className={styles.ball + " " + styles.whiteBall}></div>
@@ -146,7 +158,7 @@ export default function Home() {
           </div>
 
           <div className={styles.second}>
-            <div className={styles.leftColumn} data-aos="fade-right" data-aos-delay="350" data-aos-offset="300">
+            <div className={styles.leftColumn} data-aos-once="false" data-aos="fade-right" data-aos-delay="350" data-aos-offset="300">
               <div className={styles.secondLineLeft}>
                 <img src="/paw.png" className={styles.paw}/>
                 <div className={styles.sLL}></div>
@@ -167,11 +179,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.middleColumn} data-aos="fade-down" data-aos-offset="300">
+            <div className={styles.middleColumn} data-aos-once="false" data-aos="fade-down" data-aos-offset="300">
               <p className={styles.roadmapHeader}>Q4 2022</p>
               <div className={styles.middleLine}></div>
             </div>
-            <div className={styles.rightColumn} data-aos="fade-left" data-aos-delay="750" data-aos-offset="300">
+            <div className={styles.rightColumn} data-aos-once="false" data-aos="fade-left" data-aos-delay="750" data-aos-offset="300">
               <div className={styles.secondLineRight}>
                 <div className={styles.sLR}></div>
                 <img src="/paw.png" className={styles.paw}/>
