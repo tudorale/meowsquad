@@ -102,6 +102,7 @@ export default function Home() {
       <Head>
         <title>Meow Squad</title>
         <meta name="description" content="Meow Squad is a service that offers advanced tools to assist you in making informed decisions about your NFT investments." />
+        <meta name="author" content="Tudor Alexandru -> tudoralexandru.vercel.app" />
         <link rel="icon" href="/logo.png" />
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
