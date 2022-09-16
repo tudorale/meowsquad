@@ -355,7 +355,7 @@ export default function Home() {
           <div className={styles.gridTexts}>
             <div className={styles.box}>
               <img src="/paw.png"/>
-              <p>Dev is Founder's good friend that is graduating in MIT at the department of Deep Learning. He has participated in projects for hospital namely medical image segmentation. Where neural network must be diagnosed by x-ray. Probably right now, this algorithm is helping a large number of people.</p>
+              <p>Dev is Founder&apos;s good friend that is graduating in MIT at the department of Deep Learning. He has participated in projects for hospital namely medical image segmentation. Where neural network must be diagnosed by x-ray. Probably right now, this algorithm is helping a large number of people.</p>
             </div>
           </div>
 
@@ -373,7 +373,7 @@ export default function Home() {
           <div className={styles.pieGrid}>
             <div className={styles.pieTexts}>
               <p><span style={{color: "purple"}}>15%</span> will be used for investments in interesting projects at an early stage on private rounds. Allocation will be distributed among holders. </p>
-              <p><span style={{color: "cyan"}}>30%</span> to team's salary </p>
+              <p><span style={{color: "cyan"}}>30%</span> to team&apos;s salary </p>
               <p><span style={{color: "blue"}}>10%</span> to provide good hosting for our services </p>
               <p><span style={{color: "red"}}>5%</span> to make and send first batch of merchandise to holders </p>
               <p><span style={{color: "orange"}}>30%</span> to staking. The profit will be distributed among our holders. </p>
