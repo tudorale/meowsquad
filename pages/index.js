@@ -40,12 +40,21 @@ export const data = {
 export default function Home() {
 
   useEffect(() => {
-    window.onscroll = function(){
+    if(window.innerWidth >= 870){
+      window.onscroll = function(){
+        AOS.init({
+          offset: 150,
+          delay: 0, 
+          duration: 700,
+          once: false,
+        });
+      }
+    }else{
       AOS.init({
-        offset: 150,
+        offset: 110,
         delay: 0, 
-        duration: 700,
-        once: false,
+        duration: 500,
+        once: true,
       });
     }
   })
@@ -98,43 +107,7 @@ export default function Home() {
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Head>
       <div className={styles.background}>
-        
-      <svg
-            className={styles.scroll}
-            width="40"
-            height="77"
-            viewBox="0 0 40 77"
-            >
-              <g id="scrollCircle" transform="translate(-253 -787)">
-                <g
-                  id="Rectangle_12"
-                  transform="translate(253 787)"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="4"
-                >
-                  <rect width="40" height="77" rx="20" stroke="none"></rect>
-                  <rect
-                    x="2"
-                    y="2"
-                    width="36"
-                    height="73"
-                    rx="18"
-                    fill="none"
-                  ></rect>
-                </g>
-                <circle
-                  className={styles.circle}
-                  id="Ellipse_1"
-                  cx="11"
-                  cy="11"
-                  r="11"
-                  transform="translate(262 798)"
-                  fill="#fff"
-                ></circle>
-              </g>
-            </svg>
-
+   
         <div className={styles.roadmap}>
           
           <div className={styles.first}>
@@ -263,23 +236,26 @@ export default function Home() {
 
         <div className={styles.roadmapMobile}>
           <div>
-            <div>
+            <div data-aos="fade-down">
               <img src="/paw.png"/>
               <p className={styles.roadmapHeader}>June - September 2022</p>
             </div>
-            <p>- Release twitter-tracker</p>
-            <p>- Release twitter manager</p>
-            <p>- First batch of merch for pets</p>
-            <p>- First batch of merch for people</p>
-            <p>- Launching</p>
-            <p>- Release Staking</p>
+            <div data-aos="fade-right">
+              <p>- Release twitter-tracker</p>
+              <p>- Release twitter manager</p>
+              <p>- First batch of merch for pets</p>
+              <p>- First batch of merch for people</p>
+              <p>- Launching</p>
+              <p>- Release Staking</p>
+            </div>
           </div>
 
           <div>
-            <div>
+            <div data-aos="fade-down">
               <img src="/paw.png"/>
               <p className={styles.roadmapHeader}>Q4 2022</p>
             </div>
+            <div data-aos="fade-right">
             <p>- Release R2E tool as a service paid by $MEOW</p>
             <p>- Release service subscription format for holders paid by $MEOW</p>
             <p>- Start mailing merch for holders (for both people and cats)</p>
@@ -288,20 +264,21 @@ export default function Home() {
             <p>- Mint manager</p>
             <p>- Mint Portfolio manager</p>
             <p>- Platform for NFT raffles</p>
+           </div>
           </div>
           <div>
-            <div>
+            <div data-aos="fade-down">
               <img src="/paw.png"/>
               <p className={styles.roadmapHeader}>Q1 2023</p>
             </div>
-            <p>- Release big data based tool for analyzing twittersentiment for each collection</p>
+            <div data-aos="fade-right"><p>- Release big data based tool for analyzing twittersentiment for each collection</p></div>
           </div>
           <div>
-            <div>
+            <div data-aos="fade-down">
               <img src="/paw.png"/>
               <p className={styles.roadmapHeader}>Q2-Q3 2023</p>
             </div>
-            <p>- IRL Events</p>
+            <div data-aos="fade-right"><p>- IRL Events</p></div>
           </div>
         </div>
       </div>

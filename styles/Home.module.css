@@ -571,6 +571,11 @@
     align-items: center;
 }
 
+.roadmapMobile div div:nth-child(2){
+    flex-direction: column;
+    align-items: start;
+}
+
 .roadmapMobile div div img{
     width: 25px;
     height: 25px;
@@ -611,6 +616,12 @@
         align-items: center !important; 
     }
     
+}
+
+@media only screen and (max-width: 500px){
+    .background{
+        height: 1230px;
+    }
 }
 
 @media only screen and (max-width: 430px){
