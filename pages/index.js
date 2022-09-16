@@ -410,7 +410,7 @@ export default function Home() {
         </Slider>
 
         <div className={styles.whitepaper}>
-          <a href="https://meow-squad.gitbook.io/whitepaper/">Read our whitepaper</a>
+          <a href="https://meow-squad.gitbook.io/whitepaper/">Whitepaper</a>
         </div>
 
         <div className={styles.footer}>
