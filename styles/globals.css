@@ -9,6 +9,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body{
+  background-color: #0a0008;
+  cursor: url('/cursor.png'), auto;
+}
+
 a {
   color: inherit;
   text-decoration: none;

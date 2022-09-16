@@ -65,7 +65,7 @@
 }
 
 .roadmapHeader {
-    font-size: 1.2rem;
+    font-size: 1.3rem !important;
     font-weight: 500;
 }
 
@@ -318,4 +318,318 @@
       -webkit-transform: translate(262px, 830px);
       transform: translate(262px, 830px);
     }
+}
+
+
+.wave {
+   width: 100%;
+   height: 350px;
+   background-image: url("/wave.svg");
+   transform: rotate(180deg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.gridOne {
+    color: white;
+    display: flex;
+    width: 100%;
+    margin-top: -100px;
+    padding: 0 45px;
+    justify-content: space-between;
+}
+
+.boxOne {
+    display: flex;
+}
+
+.externalWrapper {
+    margin-right: 150px;
+}
+
+.boxOne p{
+    font-size: 1.7rem;
+}
+
+.boxOne p span {
+    color: #D803A9;
+}
+
+.boxOne img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transform: rotate(30deg);
+    top: 55px;
+}
+
+
+.nftImage img{
+    width: 200px;
+    height: 250px;
+}
+
+.gridText{
+    font-size: 1.1rem;
+    margin-top: -5px;
+}
+
+.gridTwo {
+    color: white;
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 50px;
+    justify-content: space-between;
+}
+
+.boxTwo {
+    display: flex;
+}
+
+.externalWrapper {
+    margin-right: 150px;
+}
+
+.boxTwo p{
+    font-size: 1.7rem;
+}
+
+.boxTwo p span {
+    color: #D803A9;
+}
+
+.boxTwo img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transform: rotate(30deg);
+    top: 70px;
+    left: -150px;
+}
+
+
+.nftImage img{
+    width: 250px;
+    height: 300px;
+}
+
+.gridText{
+    font-size: 1.1rem;
+    margin-top: -5px;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.gridTitle{
+    font-size: 1.7rem;
+}
+
+.gridThree {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    color: white;
+}
+
+.box img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px; 
+    position: relative;
+    top: 20px;
+}
+
+.gridTexts {
+    margin-top: -20px;
+    font-size: 1.1rem;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.carousel div{
+    outline: none;
+}
+
+.carousel div img {
+    width: 300px;
+    height: 350px;
+}
+
+.whitepaper {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.whitepaper a {
+    padding: 10px 20px;
+    background: #D803A9;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.footer {
+    background: #1a0215;
+    margin-top: 50px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerLogo {
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.footerLogo p {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.footerLogo p span {
+    color: #D803A9;
+}
+
+.footerLogo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.icons svg {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.pie{
+    color: white;
+    padding: 0 45px;
+    margin-top: 70px;
+}
+
+.pieTitle{
+    font-size: 1.7rem;
+}
+
+.pieTexts{
+    font-size: 1.1rem;
+}
+
+.pieChart{
+    width: 350px;
+    height: 400px;
+}
+
+.pieGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    align-items: flex-start;
+}
+
+.roadmapMobile{
+    display: none;
+    position: relative;
+    top: 100px;
+    margin-left: 15px;
+    width: fit-content;
+}
+
+.roadmapMobile p{
+    color: white;
+    font-size: 1.15rem;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.roadmapMobile div{
+    margin-top: 15px;
+}
+
+.roadmapMobile div div{
+    display: flex;
+    align-items: center;
+}
+
+.roadmapMobile div div img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+
+@media only screen and (max-width: 870px){
+    .roadmap{
+        display: none;
+    }
+
+    .roadmapMobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gridOne, .gridTwo{
+        flex-direction: column;
+        width: 100%;
+        padding-right: 10px;
+    }
+
+    .externalWrapper{
+        margin-right: 0px;
+    }
+
+    .pieGrid {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .carousel div {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important; 
+    }
+    
+}
+
+@media only screen and (max-width: 430px){
+    .pieChart{
+        width: 250px;
+        height: 300px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .box img {
+        margin-right: -20px;
+        left: -30px;
+    }
+
+    .gridThree{
+        padding-right: 5px;
+    }
+    
 }
