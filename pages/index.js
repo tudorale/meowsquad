@@ -42,7 +42,7 @@ export default function Home() {
   useEffect(() => {
     window.onscroll = function(){
       AOS.init({
-        offset: 300,
+        offset: 150,
         delay: 0, 
         duration: 700,
         once: false,
@@ -309,58 +309,58 @@ export default function Home() {
       <div className={styles.bottomPart}>
         <div className={styles.wave}></div>
 
-        <div className={styles.gridOne}>
+        <div className={styles.gridOne} style={{overflowX: "hidden"}}>
             <div className={styles.externalWrapper}>
-              <div className={styles.boxOne}>
+              <div className={styles.boxOne} data-aos="fade-down">
                 <p>PRIMARY <span>GOAL</span></p>
                 <img src="/paw.png"/>
               </div>
               <div>
-              <p className={styles.gridText}>
+              <p className={styles.gridText} data-aos="fade-right">
                 Our primary goal is to create an R2E solution for the Solana ecosystem. This system has recently gained popularity. We want to be pioneers in this field, so the tools we make for each project will be able to easily integrate this system. To put it another way, R2E is a tool as a service.
               </p>
             </div>
           </div>
-          <div className={styles.nftImage}>
+          <div className={styles.nftImage} data-aos="fade-left">
               <img src="/n1.jpg"/>
           </div>
         </div>
 
-        <div className={styles.gridTwo}>
+        <div className={styles.gridTwo} style={{overflowX: "hidden"}}>
             <div className={styles.externalWrapper}>
-              <div className={styles.boxTwo}>
+              <div className={styles.boxTwo} data-aos="fade-down">
                 <p>WHY <span>US?</span></p>
                 <img src="/paw.png"/>
               </div>
               <div>
-              <p className={styles.gridText}>
+              <p className={styles.gridText} data-aos="fade-right">
               Our primary goal is to create an R2E solution for the Solana ecosystem. This system has recently gained popularity. We want to be pioneers in this field, so the tools we make for each project will be able to easily integrate this system. To put it another way, R2E is a tool as a service.
               </p>
             </div>
           </div>
-          <div className={styles.nftImage}>
+          <div className={styles.nftImage} data-aos="fade-left">
               <img src="/n2.jpg"/>
           </div>
         </div>
 
         <div className={styles.gridThree}>
-          <p className={styles.gridTitle}>TEAM</p>
+          <p className={styles.gridTitle} data-aos="fade-down">TEAM</p>
           <div className={styles.gridTexts}>
-            <div className={styles.box}>
+            <div className={styles.box} data-aos="fade-right">
               <img src="/paw.png"/>
               <p>Founder is a Experienced businessman and crypto enthusiast. He has a successful business in the field of design. He also has a large team and he knows how to build businesses IRL. He is now focusing on trying to bring his skills into the web3 space.</p>
             </div>
           </div>
 
           <div className={styles.gridTexts}>
-            <div className={styles.box}>
+            <div className={styles.box} data-aos="fade-right">
               <img src="/paw.png"/>
               <p>Dev is Founder&apos;s good friend that is graduating in MIT at the department of Deep Learning. He has participated in projects for hospital namely medical image segmentation. Where neural network must be diagnosed by x-ray. Probably right now, this algorithm is helping a large number of people.</p>
             </div>
           </div>
 
           <div className={styles.gridTexts}>
-            <div className={styles.box}>
+            <div className={styles.box} data-aos="fade-right">
               <img src="/paw.png"/>
               <p>Artist Professional designer specializing in video game animation, graphics, interactive technologies and special effects. He has extensive experience in animation. They previously worked in MoviEStudio before joining Meow Squad. This company creates DotaWTF content.</p>
             </div>
@@ -368,10 +368,10 @@ export default function Home() {
         </div>
 
 
-        <div className={styles.pie}>
-          <p className={styles.pieTitle}>Distribution of funds from mint</p>
+        <div className={styles.pie} style={{overflowX: "hidden"}}>
+          <p className={styles.pieTitle} data-aos="fade-down">Distribution of funds from mint</p>
           <div className={styles.pieGrid}>
-            <div className={styles.pieTexts}>
+            <div className={styles.pieTexts} data-aos="fade-right">
               <p><span style={{color: "purple"}}>15%</span> will be used for investments in interesting projects at an early stage on private rounds. Allocation will be distributed among holders. </p>
               <p><span style={{color: "cyan"}}>30%</span> to team&apos;s salary </p>
               <p><span style={{color: "blue"}}>10%</span> to provide good hosting for our services </p>
@@ -380,7 +380,7 @@ export default function Home() {
               <p><span style={{color: "green"}}>10%</span> to IRL events to make our community stronger</p>
             </div>
 
-            <div className={styles.pieChart}>
+            <div className={styles.pieChart} data-aos="fade-left">
               <Pie 
               data={data}
               />
@@ -409,7 +409,7 @@ export default function Home() {
           </div>
         </Slider>
 
-        <div className={styles.whitepaper}>
+        <div className={styles.whitepaper} data-aos="fade-up">
           <a href="https://meow-squad.gitbook.io/whitepaper/">Whitepaper</a>
         </div>
 
