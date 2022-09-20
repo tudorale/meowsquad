@@ -1,9 +1,37 @@
 .background {
-    height: 1080px;
-    background: linear-gradient(rgba(0.5, 0.5, 0.5, 0.5), rgba(0.5, 0.5, 0.5, 0.5)), url("/background.png");
+    height: 1000px;
+    background: url("/background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.mapIcons {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 20px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+}
+
+.mapIcons svg {
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+}
+
+.toggleRoadmap {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 15px;
+    left: -5px;
+    cursor: pointer;
+}
+
+.toggleRoadmap .circle {
+    transition: all 200ms linear;
 }
 
 .roadmap {
@@ -11,7 +39,7 @@
     width: fit-content;
     margin: 0 auto;
     display: none;
-    top: 260px;
+    top: 120px;
     left: 130px;
     transition: all 550ms ease;
 }
@@ -300,28 +328,6 @@
     font-size: .9rem;
 }
 
-.scroll {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 10px;
-}
-
-.circle {
-    animation: upDown 800ms infinite alternate-reverse;
-}
-
-@keyframes upDown {
-    0% {
-      -webkit-transform: translate(262px, 798px);
-      transform: translate(262px, 798px);
-    }
-    100% {
-      -webkit-transform: translate(262px, 830px);
-      transform: translate(262px, 830px);
-    }
-}
-
 
 .wave {
    width: 100%;
@@ -458,13 +464,38 @@
     margin-top: 70px;
 }
 
-.carousel div{
+.content{
     outline: none;
+    display: flex;
+    width: 300px !important;
+    flex-direction: column;
+    text-align: center;
 }
 
-.carousel div img {
-    width: 300px;
+.noName{
+    height: 60px;
+}
+
+.innerContent{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.innerContent a svg {
+    margin-top: -14px;
+}
+
+.content img {
+    width: 100%;
     height: 350px;
+}
+
+.content p {
+    color: white;
+    font-size: 1.1rem;
 }
 
 .whitepaper {
@@ -594,6 +625,14 @@
 @media only screen and (max-width: 870px){
     .roadmap{
         display: none;
+    }
+
+    .toggleRoadmap{
+        display: none;
+    }
+
+    .background {
+        height: 1200px;
     }
 
     .roadmapMobile{

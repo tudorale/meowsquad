@@ -16,7 +16,7 @@ export const data = {
   datasets: [
     {
       label: '',
-      data: [10, 15, 30, 10, 5, 30],
+      data: [15,30,10,5,30,10],
       backgroundColor: [
         'purple',
         'cyan',
@@ -40,37 +40,6 @@ export const data = {
 
 export default function Home() {
 
-  const scrollPosition = useScrollPosition();
-
-
-  useEffect(() => {
-    if(window.innerWidth >= 870){
-
-      if(scrollPosition >= 100){
-        let wrapper = document.querySelector(".roadmap");
-        wrapper.style.display = "flex";
-        wrapper.style.opacity = "1";
-
-
-        AOS.init({
-          offset: 140,
-          duration: 700,
-        });
-
-      }else{
-        let wrapper = document.querySelector(".roadmap");
-        wrapper.style.opacity = "0";
-      }
-
-    }else{
-      AOS.init({
-        offset: 140,
-        duration: 500,
-      });
-    }
-
-  }, [scrollPosition])
-
   const settings = {
     dots: true,
     infinite: true,
@@ -83,7 +52,7 @@ export default function Home() {
     draggable: true,
     responsive: [
       {
-        breakpoint: 1060,
+        breakpoint: 1100,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -108,6 +77,39 @@ export default function Home() {
       },
     ]
   };
+
+
+  let toggle = false;
+  const toggleRoadmap = () => {
+    toggle = !toggle;
+    let circle = document.querySelector(".circle");
+    if(toggle){
+      circle.style.transform = "translate(262px, 830px)";
+      let wrapper = document.querySelector(".roadmap");
+      wrapper.style.display = "flex";
+      wrapper.style.opacity = "1";
+
+      AOS.init({
+        offset: 140,
+        duration: 700,
+      });
+    }else{
+      circle.style.transform = "translate(262px, 798px)";
+
+      let wrapper = document.querySelector(".roadmap");
+      wrapper.style.opacity = "0";
+    }   
+  }
+
+  useEffect(() => {
+    AOS.init({
+      offset: 140,
+      duration: 500,
+    });
+
+    let wrapper = document.querySelector(".roadmap");
+    wrapper.style.display = "none";
+  }, [])
  
   return (
     <>
@@ -115,12 +117,69 @@ export default function Home() {
         <title>Meow Squad</title>
         <meta name="description" content="Meow Squad is a service that offers advanced tools to assist you in making informed decisions about your NFT investments." />
         <meta name="author" content="Tudor Alexandru -> tudoralexandru.vercel.app" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/favicon.png" />
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Head>
       <div className={styles.background}>
-   
+
+      <svg
+            className={styles.toggleRoadmap}
+            onClick={() => toggleRoadmap()}
+            width="40"
+            height="77"
+            viewBox="0 0 40 77"
+            >
+              <g id="scrollCircle" transform="translate(-253 -787)">
+                <g
+                  id="Rectangle_12"
+                  transform="translate(253 787)"
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="4"
+                >
+                  <rect width="40" height="77" rx="20" stroke="none"></rect>
+                  <rect
+                    x="2"
+                    y="2"
+                    width="36"
+                    height="73"
+                    rx="18"
+                    fill="none"
+                  ></rect>
+                </g>
+                <circle
+                  className={styles.circle + " " + "circle"}
+                  id="Ellipse_1"
+                  cx="11"
+                  cy="11"
+                  r="11"
+                  transform="translate(262 798)"
+                  fill="#fff"
+                ></circle>
+              </g>
+        </svg>
+
+        <div className={styles.mapIcons}>
+            <a href="https://twitter.com/Meowsquadnft" target="_blank" rel="noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg"  width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+              </svg>
+            </a>
+            <a href="https://discord.gg/qJ9nKkHP" target="_blank" rel="noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="9" cy="12" r="1" />
+                <circle cx="15" cy="12" r="1" />
+                <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0" />
+                <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+                <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5" />
+                <path d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5" />
+              </svg>
+            </a>
+        </div>
+
         <div className={styles.roadmap + " " + "roadmap"}>
           
           <div className={styles.first + " " + "first"}>
@@ -158,7 +217,7 @@ export default function Home() {
           </div>
 
           <div className={styles.second}>
-            <div className={styles.leftColumn} data-aos-once="false" data-aos="fade-right" data-aos-delay="350" data-aos-offset="300">
+            <div className={styles.leftColumn} data-aos-once="false" data-aos="fade-right" data-aos-delay="350" data-aos-offset="120">
               <div className={styles.secondLineLeft}>
                 <img src="/paw.png" className={styles.paw}/>
                 <div className={styles.sLL}></div>
@@ -179,11 +238,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.middleColumn} data-aos-once="false" data-aos="fade-down" data-aos-offset="300">
+            <div className={styles.middleColumn} data-aos-once="false" data-aos="fade-down" data-aos-offset="120">
               <p className={styles.roadmapHeader}>Q4 2022</p>
               <div className={styles.middleLine}></div>
             </div>
-            <div className={styles.rightColumn} data-aos-once="false" data-aos="fade-left" data-aos-delay="750" data-aos-offset="300">
+            <div className={styles.rightColumn} data-aos-once="false" data-aos="fade-left" data-aos-delay="750" data-aos-offset="120">
               <div className={styles.secondLineRight}>
                 <div className={styles.sLR}></div>
                 <img src="/paw.png" className={styles.paw}/>
@@ -379,27 +438,69 @@ export default function Home() {
         </div>
         
         <Slider {...settings} className={styles.carousel}>
-          <div>
+          <div className={styles.content}>
             <img src="/nft1.jpg"/>
+            <div className={styles.innerContent}>
+              <p>Advisor</p>
+              <a href="https://twitter.com/VavKay" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="35" height="35" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div>
+          <div className={styles.content}>
             <img src="/nft2.jpg"/>
+            <div className={styles.innerContent}>
+              <p className={styles.noName}>Artist</p>
+            </div>
           </div>
-          <div>
+          <div className={styles.content}>
             <img src="/nft3.jpg"/>
+            <div className={styles.innerContent}>
+              <p className={styles.noName}>Developer</p>
+            </div>
           </div>
-          <div>
+          <div className={styles.content}>
             <img src="/nft4.jpg"/>
+            <div className={styles.innerContent}>
+              <p>Advisor / Collab Manager</p>
+              <a href="https://twitter.com/godox540rkpkl" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="35" height="35" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div>
+          <div className={styles.content}>
             <img src="/nft5.jpg"/>
+            <div className={styles.innerContent}>
+              <p>Collab Manager</p>
+              <a href="https://twitter.com/ClementierNFT" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="35" height="35" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div>
+          <div className={styles.content}>
             <img src="/nft6.jpg"/>
+            <div className={styles.innerContent}>
+              <p>Collab Manager</p>
+              <a href="https://mobile.twitter.com/NFT_Foxy01" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="35" height="35" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </Slider>
 
-        <div className={styles.whitepaper} data-aos="fade-up">
+        <div className={styles.whitepaper}>
           <a href="https://meow-squad.gitbook.io/whitepaper/">Whitepaper</a>
         </div>
 
@@ -409,13 +510,13 @@ export default function Home() {
             <p>Meow <span>Squad</span></p>
           </div>
           <div className={styles.icons}>
-            <a href="https://twitter.com/Meowsquadnft">
+            <a href="https://twitter.com/Meowsquadnft" target="_blank" rel="noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg"  width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
               </svg>
             </a>
-            <a href="#">
+            <a href="https://discord.gg/qJ9nKkHP" target="_blank" rel="noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="9" cy="12" r="1" />
