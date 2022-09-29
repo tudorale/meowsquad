@@ -9,3 +9,15 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.villageTrigger{
+    width: 250px;
+    height: 250px;
+    background: red;
+    border-radius: 50%;
+    position: sticky;
+    opacity: 0.5;
+    margin-top: -340px;
+    margin-left: 70px;
+    cursor: pointer;
+}

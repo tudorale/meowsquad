@@ -1,0 +1,37 @@
+.village {
+display: grid;
+grid-template-columns: auto auto;
+}
+
+.image{
+    height: 100vh;
+    position: sticky;
+    left:0;
+    top: 0;
+}
+
+.text {
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 600px){
+    .image {
+        width: 100vw;
+        height: 550px;
+        position: relative;
+    }
+
+    .village {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 430px){
+    .image {
+        width: 100vw;
+        height: 450px;
+        position: relative;
+    }
+}

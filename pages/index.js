@@ -1,17 +1,14 @@
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Link from "next/link"
 
 export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Meow Squad</title>
-        <meta name="description" content="Meow Squad is a service that offers advanced tools to assist you in making informed decisions about your NFT investments." />
-        <meta name="author" content="Tudor Alexandru -> tudoralexandru.vercel.app" />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
       <img className={styles.background} src="/bg.PNG"/>
+      <Link href="/locations/village">
+        <div className={styles.villageTrigger}></div>
+      </Link>
     </>
   )
 }
