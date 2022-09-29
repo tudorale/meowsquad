@@ -20,15 +20,14 @@
     50%{background-position:100% 50%}
     100%{background-position:0% 51%}
 }
-
 .text {
-    font-size: 1.1rem;
-    background: linear-gradient(270deg, #91b2d0, #6fa1cd, #5391c7, #4bc8a7, #27aa87, #f9ed7a, #f0e35e, #ffcf4f);
-    background-size: 1600% 1600%;
+    background: linear-gradient(270deg, #91b2d0, #6fa1cd, #5391c7, #4bc8a7, #27aa87, #f9ed7a, #f0e35e, #ffcf4f, #aa5945, #b74b30, #d4694f);    background-size: 2200% 2200%;
+    background-size: 2200% 2200%;
 
-    -webkit-animation: AnimationName 10s ease infinite;
-    -moz-animation: AnimationName 10s ease infinite;
-    animation: AnimationName 10s ease infinite;
+    -webkit-animation: AnimationName 14s ease infinite;
+    -moz-animation: AnimationName 14s ease infinite;
+    animation: AnimationName 14s ease infinite;
+    padding-right: 10px;
 }
 
 .image{
