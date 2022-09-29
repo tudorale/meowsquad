@@ -1,6 +1,8 @@
 .background {
     width: 100%;
 }
+
+
 @media only screen and (max-width: 730px){
     .background {
         position: absolute;

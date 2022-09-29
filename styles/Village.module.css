@@ -1,6 +1,34 @@
 .village {
-display: grid;
-grid-template-columns: auto auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    color: black;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+.text {
+    font-size: 1.1rem;
+    background: linear-gradient(270deg, #91b2d0, #6fa1cd, #5391c7, #4bc8a7, #27aa87, #f9ed7a, #f0e35e, #ffcf4f);
+    background-size: 1600% 1600%;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
 }
 
 .image{
@@ -10,9 +38,8 @@ grid-template-columns: auto auto;
     top: 0;
 }
 
-.text {
+.text p{
     margin-left: 20px;
-    font-size: 1.1rem;
 }
 
 @media only screen and (max-width: 600px){
