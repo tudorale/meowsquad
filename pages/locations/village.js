@@ -4,7 +4,7 @@ import styles from "../../styles/Village.module.css";
 function village() {
   return (
     <div className={styles.village}>
-        <img className={styles.image} src="/village.JPG"></img>
+        <img className={styles.image} src="/village.png"></img>
 
         <div className={styles.text}>
             <p>Welcome to the first location that will open your eyes; Meowvillage. Mostly elderly cats live here. They are engaged in agriculture or, for example, beekeeping like a man in a fountain.</p>

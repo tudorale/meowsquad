@@ -21,13 +21,13 @@
     100%{background-position:0% 51%}
 }
 .text {
-    background: linear-gradient(270deg, #91b2d0, #6fa1cd, #5391c7, #4bc8a7, #27aa87, #f9ed7a, #f0e35e, #ffcf4f, #aa5945, #b74b30, #d4694f);    background-size: 2200% 2200%;
-    background-size: 2200% 2200%;
-
-    -webkit-animation: AnimationName 14s ease infinite;
-    -moz-animation: AnimationName 14s ease infinite;
-    animation: AnimationName 14s ease infinite;
+    background: linear-gradient(270deg, #35a7b7, #2d9868);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
     padding-right: 10px;
+    font-size: 1.1rem;
 }
 
 .image{
