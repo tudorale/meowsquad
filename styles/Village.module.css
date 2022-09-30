@@ -28,6 +28,8 @@
     animation: AnimationName 5s ease infinite;
     padding-right: 10px;
     font-size: 1.1rem;
+    position: relative;
+    z-index: 76;
 }
 
 .image{
@@ -35,6 +37,8 @@
     position: sticky;
     left:0;
     top: 0;
+    z-index: 80;
+
 }
 
 .text p{

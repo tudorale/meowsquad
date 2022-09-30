@@ -5,12 +5,13 @@ export default function Home() {
 
   return (
     <>
-      <img className={styles.background} src="/bg.PNG"/>
+      <div className={styles.homeWrapper}>
 
-
-      <Link href="/locations/village">
-        <div className={styles.villageTrigger}></div>
-      </Link>
+        <img className={styles.background} src="/bg.PNG"/>
+        <Link href="/locations/village">
+          <div className={styles.villageTrigger}></div>
+        </Link>
+      </div>
     </>
   )
 }
