@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import styles from "../styles/Map.module.css";
 
 const Map = dynamic(
   () => import("../components/Map"),
@@ -10,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <Suspense fallback={<p style={{color: "white"}}>loading...</p>}>
+      <Suspense fallback={<div className={styles.spinner}></div>}>
         <Map />
       </Suspense>
     </>

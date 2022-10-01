@@ -6,7 +6,8 @@ function Map() {
   return (
     <div className={styles.homeWrapper}>
 
-        <img className={styles.background} src="/bg.PNG"/>
+        <img className={styles.background} src="/bg-min.PNG"/>
+        
         <Link href="/locations/village">
           <div className={styles.villageTrigger}></div>
         </Link>
