@@ -46,6 +46,12 @@
     margin-left: 10px;
 }
 
+.chapterTitle{
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
 @media only screen and (max-width: 600px){
     .image {
         width: 100vw;
