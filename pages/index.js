@@ -1,17 +1,18 @@
-import styles from '../styles/Home.module.css';
-import Link from "next/link"
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(
+  () => import("../components/Map"),
+  { suspense: true }
+);
 
 export default function Home() {
 
   return (
     <>
-      <div className={styles.homeWrapper}>
-
-        <img className={styles.background} src="/bg.PNG"/>
-        <Link href="/locations/village">
-          <div className={styles.villageTrigger}></div>
-        </Link>
-      </div>
+      <Suspense fallback={<p style={{color: "white"}}>loading...</p>}>
+        <Map />
+      </Suspense>
     </>
   )
 }

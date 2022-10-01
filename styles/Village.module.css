@@ -2,6 +2,11 @@
     display: grid;
     grid-template-columns: auto auto;
     color: black;
+    background: linear-gradient(270deg, #35a7b7, #2d9868);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
 }
 
 
@@ -21,11 +26,6 @@
     100%{background-position:0% 51%}
 }
 .text {
-    background: linear-gradient(270deg, #35a7b7, #2d9868);
-    background-size: 400% 400%;
-    -webkit-animation: AnimationName 5s ease infinite;
-    -moz-animation: AnimationName 5s ease infinite;
-    animation: AnimationName 5s ease infinite;
     padding-right: 10px;
     font-size: 1.1rem;
     position: relative;
@@ -42,7 +42,7 @@
 }
 
 .text p{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 @media only screen and (max-width: 600px){
