@@ -40,7 +40,7 @@
     background: red;
     border-radius: 50%;
     position: sticky;
-    opacity: 0.5;
+    opacity: 0;
     cursor: pointer;
 }
 
