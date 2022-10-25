@@ -6,10 +6,14 @@ function Map() {
   return (
     <div className={styles.homeWrapper}>
 
-        <img className={styles.background} src="/bg-min.PNG"/>
+        <img className={styles.background} src="/map.PNG"/>
         
         <Link href="/locations/village">
-          <div className={styles.villageTrigger}></div>
+          <div className={styles.villageTrigger + " " + styles.trigger}></div>
+        </Link>
+
+        <Link href="/locations/school">
+          <div className={styles.schoolTrigger + " " + styles.trigger}></div>
         </Link>
     </div>
   )

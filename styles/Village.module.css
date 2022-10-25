@@ -52,10 +52,10 @@
     font-weight: 500;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 630px){
     .image {
         width: 100vw;
-        height: 550px;
+        height: auto;
         position: relative;
     }
 
@@ -65,10 +65,3 @@
     }
 }
 
-@media only screen and (max-width: 430px){
-    .image {
-        width: 100vw;
-        height: 450px;
-        position: relative;
-    }
-}
